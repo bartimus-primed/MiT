@@ -80,4 +80,5 @@ proc entrance*() =
             echo("What would you like to do? type 'help' for more information")
         choice = readLine(stdin)
         eraseScreen()
-    mf.close()
+    if filename != "":
+        mf.close()

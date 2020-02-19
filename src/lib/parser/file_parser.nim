@@ -34,3 +34,7 @@ proc parse_byte_string*(search_string: string, file_s: FileStream): bool =
         var b = each_byte.parseHexInt()
         byte_sequence.add(b)
     return find_byte_sequence(byte_sequence, file_s)
+
+proc get_file_header*(file_s: FileStream): seq[int] =
+    var this_test = @[0x4D, 0x5A, 0x90]
+    return this_test
